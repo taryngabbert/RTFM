@@ -120,8 +120,8 @@ angular.module('rtfmApp')
     <ul>
         <li ng-repeat="thread in threads">
             <a ui-sref="thread({threadId: thread.$id})">
-                <span>{{ thread.title }}</span>
-                <span>(by {{ thread.username }})</span>
+                <span><b>{{ thread.title }}</b></span>
+                <span>{{ thread.username | uppercase}}</span>
             </a>
         </li>
     </ul>

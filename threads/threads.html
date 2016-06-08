@@ -1,0 +1,24 @@
+<h1> this is the threads page </h1>
+
+<form>
+  <input type="text" placeholder="New thead title..." ng-model="newThreadTitle" required/>
+  <input type="text" placeholder="Username.." ng-model="username" required/>
+  <button ng-disabled="newThreadForm.$invalid" ng-click="createThread(username, newThreadTitle)">Add Thread</button>
+</form>
+
+
+
+
+<div class="threadsFlex">
+<div ng-repeat="thread in threads">
+<a ui-sref="indvThread({threadId: thread.$id})">
+  <div class="threadsDiv">
+
+      <h4>"{{thread.title}}"</h4>
+      <br>
+      <h6>FROM:<b>{{thread.username |uppercase}}</b></h6>
+
+  </div>
+  </a>
+</div>
+</div>
